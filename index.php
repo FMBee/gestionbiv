@@ -1,5 +1,6 @@
 <?php
-error_reporting( 1==0 ? (E_ERROR | E_WARNING | E_PARSE | E_NOTICE) : 0 );
+
+error_reporting( 1==0 ? (E_ERROR | E_WARNING | E_PARSE | E_NOTICE) : 0 );   //CODE
 
 // récupération du nom d'utlisateur et du nom de domaine
 require_once 'include/connntlm.php';
@@ -13,8 +14,8 @@ require_once 'include/class.pdodbh.php';
 //création de la session
 //session_start();
 
-// $_SESSION['admin'] = estAdmin();
-$_SESSION['admin'] = true;  //CODE
+$_SESSION['admin'] = estAdmin();
+// $_SESSION['admin'] = true;  //CODE
 
 $pdo = Pdodbh::getPdodbh();
 
