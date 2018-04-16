@@ -33,16 +33,22 @@
                         <h1>Gestion BIV</h1>
                         <ul class="nav nav-tabs">
                             <?php
+                            
                             if($uc == 'tableau'){echo '<li class="active">';}else{echo '<li>';}
                             echo '<a href="index.php">Tableau BIV</a></li>';
+                            
                             if($uc == 'tableauFin'){echo '<li class="active">';}else{echo '<li>';}
                             echo '<a href="index.php?uc=tableauFin&action=affichage">Tableau OP Financements</a></li>';
-                                if ($_SESSION['admin']){
-                                    if($uc == 'formulaireBiv'){echo '<li class="active">';}else{echo '<li>';}
-                                    echo '<a href="index.php?uc=formulaireBiv">Nouveau</a></li>';
-                                    if($uc == 'administration'){echo '<li class="active">';}else{echo '<li>';}
-                                    echo '<a href="index.php?uc=administration">Page administration</a></li>';
-                                }
+                            
+                            if($uc == 'recapCession'){echo '<li class="active">';}else{echo '<li>';}    //NEW
+                            echo '<a href="index.php?uc=recapCession&action=affichage">Prix Cessions</a></li>';
+                            
+                            if ($_SESSION['admin']){
+                                if($uc == 'formulaireBiv'){echo '<li class="active">';}else{echo '<li>';}
+                                echo '<a href="index.php?uc=formulaireBiv">Nouveau</a></li>';
+                                if($uc == 'administration'){echo '<li class="active">';}else{echo '<li>';}
+                                echo '<a href="index.php?uc=administration">Page administration</a></li>';
+                            }
                             ?>
                         </ul>
                     </header>

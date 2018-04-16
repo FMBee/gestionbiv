@@ -1,4 +1,6 @@
 <?php
+error_reporting( 1==0 ? (E_ERROR | E_WARNING | E_PARSE | E_NOTICE) : 0 );
+
 // récupération du nom d'utlisateur et du nom de domaine
 require_once 'include/connntlm.php';
 // récupération des constantes
@@ -10,7 +12,9 @@ require_once 'include/class.pdodbh.php';
 
 //création de la session
 //session_start();
-$_SESSION['admin'] = estAdmin();
+
+// $_SESSION['admin'] = estAdmin();
+$_SESSION['admin'] = true;  //CODE
 
 $pdo = Pdodbh::getPdodbh();
 
@@ -36,6 +40,10 @@ switch ($uc){
     }
     case 'tableauFin':{
         include "controleurs/c_tableauFin.php";
+        break;
+    }
+    case 'recapCession':{   //NEW
+        include "controleurs/c_recapCession.php";
         break;
     }
     case 'formulaireBiv':{

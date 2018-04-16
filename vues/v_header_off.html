@@ -33,5 +33,9 @@
                             <li class="<?php echo (($labelPeriodes[$j] == $labelPeriodes[3] || $labelPeriodes[$j] == $labelPeriodes[4]) && $type === 'FIN') ? 'active' : ''; ?>" >
                                 <?php echo "<a href='financements".$labelPeriodes[3].".html'>Financements ".substr($labelPeriodes[3],0,4)."</a>"; ?>
                             </li>
+                            <!-- //NEW -->
+                            <li class="<?php echo ($type === 'CES') ? 'active' : ''; ?>" >
+                                <?php echo "<a href='recap_cessions.html'>Prix Cessions</a>"; ?>
+                            </li>
                         </ul>
                     </header>
